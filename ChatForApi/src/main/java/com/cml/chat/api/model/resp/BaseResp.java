@@ -1,4 +1,4 @@
-package com.cml.chat.api.model;
+package com.cml.chat.api.model.resp;
 
 public class BaseResp {
 	private int code;

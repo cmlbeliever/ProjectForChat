@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.cml.chat.api.model.UnAuthenticationResp;
+import com.cml.chat.api.model.resp.UnAuthenticationResp;
 
 @RequestMapping("/error")
 @Controller
