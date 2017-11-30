@@ -20,7 +20,6 @@ public class ErrorController {
 	@RequestMapping("/unAuth")
 	@ResponseBody
 	public UnAuthenticationResp unAuthenticationResp() {
-		System.out.println(unAuthenticationResp.getErrMsg()+","+msg);
 		return unAuthenticationResp;
 	}
 }

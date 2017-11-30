@@ -50,6 +50,9 @@ public class UserController {
 		}
 
 		resp.setCode(ApiConst.Result.OK);
+		resp.setUsername(u.getUsername());
+		resp.setId(u.getUserId());
+		resp.setName(u.getNickName());
 		resp.setToken(jwtManager.generateToken(u));
 		return resp;
 	}
