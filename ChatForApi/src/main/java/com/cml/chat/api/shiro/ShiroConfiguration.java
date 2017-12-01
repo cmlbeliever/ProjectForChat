@@ -66,8 +66,8 @@ public class ShiroConfiguration {
 		shiroFilter.setUnauthorizedUrl(properties.getUnauthorized());
 		shiroFilter.setFilterChainDefinitionMap(properties.getFilters());
 
+		TokenFilter tokenFilter=new TokenFilter();
 		Map<String, javax.servlet.Filter> filters = new HashMap<>();
-		TokenFilter tokenFilter = new TokenFilter();
 		tokenFilter.setEnabled(true);
 		tokenFilter.setUnauthorizedUrl(properties.getUnauthorized());
 		filters.put("token", tokenFilter);

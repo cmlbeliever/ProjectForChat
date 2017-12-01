@@ -1,8 +1,11 @@
 package com.cml.chat.api.controller.user;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -12,6 +15,8 @@ import com.cml.chat.api.model.User;
 import com.cml.chat.api.model.request.LoginVO;
 import com.cml.chat.api.model.resp.LoginResp;
 import com.cml.chat.api.service.UserService;
+
+import reactor.ipc.netty.http.server.HttpServerRequest;
 
 @Controller
 @RequestMapping("/user")
@@ -55,5 +60,17 @@ public class UserController {
 		resp.setName(u.getNickName());
 		resp.setToken(jwtManager.generateToken(u));
 		return resp;
+	}
+
+	/**
+	 * 获取当前用户信息
+	 * 
+	 * @param req
+	 * @return
+	 */
+	@ResponseBody
+	@PostMapping("/getUserInfo")
+	public User getUserInfo(HttpServletRequest req) {
+		return (User) req.getAttribute(ApiConst.Request.TOKEN_KEY);
 	}
 }

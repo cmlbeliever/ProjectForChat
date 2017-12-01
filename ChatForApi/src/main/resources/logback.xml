@@ -56,10 +56,10 @@
 		<level value="ALL" />
 	</logger>
 
-	<logger name="com.cml.learn">
+	<logger name="com.cml.chat">
 		<level value="ALL" />
 	</logger>
-	<logger name="org.hibernate.sql">
+	<logger name="org.apache.shiro">
 		<level value="ALL" />
 	</logger>
 

@@ -6,4 +6,8 @@ public interface ApiConst {
 		int FAIL = 400;
 		int UN_AUTHENTICATION = 400;
 	}
+
+	interface Request {
+		String TOKEN_KEY = "token";
+	}
 }
