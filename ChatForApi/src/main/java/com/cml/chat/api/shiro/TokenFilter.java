@@ -9,6 +9,9 @@ import org.apache.shiro.web.filter.AccessControlFilter;
 import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.cml.chat.api.auth.JwtManager;
 import com.cml.chat.api.constant.ApiConst;
@@ -20,7 +23,12 @@ public class TokenFilter extends AccessControlFilter {
 
 	protected String unauthorizedUrl;
 
-	private JwtManager jwtManager = new JwtManager();
+	private JwtManager jwtManager;
+
+	public TokenFilter(JwtManager jwtManager) {
+		super();
+		this.jwtManager = jwtManager;
+	}
 
 	@Override
 	protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) throws Exception {

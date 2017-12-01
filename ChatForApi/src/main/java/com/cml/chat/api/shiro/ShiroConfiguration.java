@@ -11,14 +11,18 @@ import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSource
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.web.filter.DelegatingFilterProxy;
 
+import com.cml.chat.api.auth.JwtManager;
+
 @Configuration
 public class ShiroConfiguration {
+
 	@Bean
 	public DefaultWebSecurityManager securityManager(UserRealm userRealm) {
 		DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
@@ -58,7 +62,8 @@ public class ShiroConfiguration {
 	}
 
 	@Bean("shiroFilterFactoryBean")
-	public ShiroFilterFactoryBean shiroFilterFactoryBean(DefaultWebSecurityManager securityManager, ShiroConfigProperties properties) {
+	public ShiroFilterFactoryBean shiroFilterFactoryBean(DefaultWebSecurityManager securityManager, ShiroConfigProperties properties,
+			JwtManager jwt) {
 		ShiroFilterFactoryBean shiroFilter = new ShiroFilterFactoryBean();
 		shiroFilter.setSecurityManager(securityManager);
 		shiroFilter.setLoginUrl(properties.getLoginUrl());
@@ -66,7 +71,7 @@ public class ShiroConfiguration {
 		shiroFilter.setUnauthorizedUrl(properties.getUnauthorized());
 		shiroFilter.setFilterChainDefinitionMap(properties.getFilters());
 
-		TokenFilter tokenFilter=new TokenFilter();
+		TokenFilter tokenFilter = new TokenFilter(jwt);
 		Map<String, javax.servlet.Filter> filters = new HashMap<>();
 		tokenFilter.setEnabled(true);
 		tokenFilter.setUnauthorizedUrl(properties.getUnauthorized());
