@@ -33,7 +33,7 @@ public class Application {
 	@Bean
 	public UnAuthenticationResp unAuthenticationResp() {
 		UnAuthenticationResp resp = new UnAuthenticationResp();
-		resp.setCode(ApiConst.Result.UN_AUTHENTICATION);
+		resp.setStatus(ApiConst.Result.UN_AUTHENTICATION);
 		return resp;
 	}
 

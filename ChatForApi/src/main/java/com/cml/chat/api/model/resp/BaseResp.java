@@ -1,15 +1,15 @@
 package com.cml.chat.api.model.resp;
 
 public class BaseResp {
-	private int code;
+	private int status;
 	private String errMsg;
 
-	public int getCode() {
-		return code;
+	public int getStatus() {
+		return status;
 	}
 
-	public void setCode(int code) {
-		this.code = code;
+	public void setStatus(int status) {
+		this.status = status;
 	}
 
 	public String getErrMsg() {

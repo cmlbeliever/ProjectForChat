@@ -82,8 +82,8 @@ public class ShiroConfiguration {
 	}
 
 	@Bean
-	public FilterRegistrationBean<DelegatingFilterProxy> filterRegistrationBean() {
-		FilterRegistrationBean<DelegatingFilterProxy> filterRegistration = new FilterRegistrationBean<DelegatingFilterProxy>();
+	public FilterRegistrationBean filterRegistrationBean() {
+		FilterRegistrationBean filterRegistration = new FilterRegistrationBean();
 		filterRegistration.setFilter(new DelegatingFilterProxy("shiroFilterFactoryBean"));
 		filterRegistration.setEnabled(true);
 		filterRegistration.addUrlPatterns("/*");
