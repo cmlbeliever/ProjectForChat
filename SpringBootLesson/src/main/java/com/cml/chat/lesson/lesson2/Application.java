@@ -8,7 +8,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication()
 public class Application {
-	private static Logger log=LoggerFactory.getLogger(Application.class);
+	private static Logger log = LoggerFactory.getLogger(Application.class);
 
 	public static void main(String[] args) throws Exception {
 		SpringApplication springApplication = new SpringApplication(Application.class);
@@ -16,6 +16,9 @@ public class Application {
 		springApplication.setWebEnvironment(false);
 		ConfigurableApplicationContext application = springApplication.run(args);
 		MyBean mybean = application.getBean(MyBean.class);
-		log.info("getCustomValue:"+mybean.getCustomValue());
+		log.info("getCustomValue:" + mybean.getCustomValue());
+		log.info("beanFactory===>" + application.getBeanFactory().getClass());
+
+		application.close();
 	}
 }

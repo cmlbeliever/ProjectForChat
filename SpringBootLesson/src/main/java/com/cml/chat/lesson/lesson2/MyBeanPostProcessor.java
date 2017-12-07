@@ -13,6 +13,11 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
 
 	@Override
 	public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+		if (bean instanceof IMyBean) {
+			log.info("=======>postProcessBeforeInitialization");
+			IMyBean mybean = (IMyBean) bean;
+			mybean.setCustomValue("vvvv");
+		}
 		return bean;
 	}
 
