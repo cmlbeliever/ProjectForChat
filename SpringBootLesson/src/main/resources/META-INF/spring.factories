@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.cml.chat.lesson.lesson5.TestConfiguration,com.cml.chat.lesson.lesson5.TestConfiguration2
