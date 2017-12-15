@@ -34,7 +34,7 @@ public class SimpleBeanScanner implements EnvironmentAware, ResourceLoaderAware 
 				return true;
 			}
 		});
-		log.info(scanner.findCandidateComponents("com.cml.chat.lesson.lesson6").toString());
+		log.info(scanner.findCandidateComponents("com.cml.chat.lesson.extra").toString());
 		log.info("==========================end scan==============================");
 	}
 

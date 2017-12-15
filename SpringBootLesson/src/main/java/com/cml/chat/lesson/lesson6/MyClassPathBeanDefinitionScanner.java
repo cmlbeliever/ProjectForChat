@@ -14,6 +14,7 @@ public class MyClassPathBeanDefinitionScanner extends ClassPathBeanDefinitionSca
 	@Override
 	protected boolean isCandidateComponent(AnnotatedBeanDefinition beanDefinition) {
 		AnnotationMetadata metadata = beanDefinition.getMetadata();
-		return (metadata.isIndependent() && (metadata.isAbstract() || metadata.isInterface()));
+		return (metadata.isIndependent() && (metadata.isConcrete() || metadata.isAbstract() || metadata.isInterface()));
 	}
+
 }

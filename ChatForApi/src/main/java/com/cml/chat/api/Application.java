@@ -1,11 +1,16 @@
 package com.cml.chat.api;
 
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.ClassUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -21,6 +26,7 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 @RequestMapping
 public class Application {
 	public static void main(String[] args) throws Exception {
+		System.out.println(ClassUtils.convertClassNameToResourcePath(Application.class.getName()));
 		SpringApplication.run(Application.class, args);
 	}
 
