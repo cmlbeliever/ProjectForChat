@@ -12,7 +12,7 @@ GitChat 代码仓库，此仓库中为GitChat上文章对应的代码存放点�
 
 - MyLogAutoConfiguration 
 	
-> 《Spring Boot Enable* 的原理与实践》中使用注解方式配置的代码库，chat地址：[http://gitbook.cn/gitchat/activity/5a0a4835fa9a111e9bbba4c5](http://gitbook.cn/gitchat/activity/5a0a4835fa9a111e9bbba4c5 "http://gitbook.cn/gitchat/activity/5a0a4835fa9a111e9bbba4c5")
+> 《Enable*框架实现原理与自己实现Enable*框架》中使用注解方式配置的代码库，课程地址：[http://gitbook.cn/gitchat/column/5a2fbea7626a7a2421b9a18c](http://gitbook.cn/gitchat/column/5a2fbea7626a7a2421b9a18c "http://gitbook.cn/gitchat/column/5a2fbea7626a7a2421b9a18c")
 
 - MyLogAutoConfigurationByProperties
-> 《Spring Boot Enable* 的原理与实践》中使用配置文件自动配置的代码库，chat地址：[http://gitbook.cn/gitchat/activity/5a0a4835fa9a111e9bbba4c5](http://gitbook.cn/gitchat/activity/5a0a4835fa9a111e9bbba4c5 "http://gitbook.cn/gitchat/activity/5a0a4835fa9a111e9bbba4c5")
+> 《Enable*框架实现原理与自己实现Enable*框架》中使用配置文件自动配置的代码库，课程地址：[http://gitbook.cn/gitchat/column/5a2fbea7626a7a2421b9a18c](http://gitbook.cn/gitchat/column/5a2fbea7626a7a2421b9a18c "http://gitbook.cn/gitchat/column/5a2fbea7626a7a2421b9a18c")
